@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- utf-8 -->
+    <meta charset="UTF-8">
+
+    <!--viewport  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- importation du CSS -->
+    <link rel="stylesheet" href="css/menu.css">
+
+    <!-- Importation de la police -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- titre -->
+    <title>Notre Menu</title>
+
+</head>
+
+<body>
+<!-- Header -->
+    <header>
+        <h1>Menu - HoneyTea</h1>
+    </header>
+    
+    <h2>Thés</h2>
+
+    <ul>
+         <% thes.nom.forEach (t => { %>
+
+            <li> <%= t %> <em> <%= thes.prix %></em></li>
+    <% }) %>
+        
+    </ul>
+<br>
+    <h2>Pâtisseries</h2>
+
+    <ul>
+         <% patisseries.nom.forEach (p => { %>
+
+            <li> <%= p %> <em> <%= patisseries.prix %></em></li>
+    <% }) %>
+        
+    </ul>
+
+    <h2>Appéritifs</h2>
+
+    <ul>
+         <% apperitif.nom.forEach (a => { %>
+
+            <li> <%= a %> <em> <%= apperitif.prix %></em></li>
+    <% }) %>
+        
+    </ul>
+
+    <h2>Boissons (faites maison)</h2>
+
+    <ul>
+         <% boissons.nom.forEach (b => { %>
+
+            <li> <%= b %> <em> <%= boissons.prix %></em></li>
+    <% }) %>
+        
+    </ul>
+
+    <br>
+    <div class="bouton">
+        <button>Commander</button>
+    </div>
+    
+    <!-- Bon appétit -->
+    <p class="tea"> Bon AppéTea!</p>
+    <br>
+    <footer>
+        <p> 2024 Salon de Thé "HoneyTea". Tous droits réservés.</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* body */
+body {
+    font-family: 'Oleo Script', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f0e3f2;
+    color: #333333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* S'assure que le body occupe toute la hauteur de la fenêtre */
+}
+
+/* h1 */
+h1 {
+    text-align: center;
+    color: #1E3A4F;
+    font-size: 40px;
+    margin: 15px 0; /* Réduction des marges autour du titre */
+}
+
+h3 {
+    text-align: center;
+    color: #1E3A4F;
+}
+
+/* présentation équipe */
+ul {
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 2em;
+    background-color: #bfe8f3;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Réduction du padding interne de la liste */
+    margin: 10px auto 5px; /* Réduction de la marge inférieure pour rapprocher le footer */
+    display: inline-block; /* Ajuste la taille au contenu */
+}
+
+/* liste équipe */
+li {
+    text-align: center;
+    list-style: none;
+    margin-bottom: 5px; /* Réduction de l'espacement entre les éléments de la liste */
+}
+
+/* footer */
+footer {
+    background-color: #70185d;
+    text-align: center;
+    padding: 10px;
+    color: #FFD7E0; /* couleur texte */
+    position: relative;
+    bottom: 0;
+    width: 100%; /* S'étend sur toute la largeur */
+    margin-top: 5px; /* Réduction de l'espacement au-dessus du footer */
+    margin-top: auto; /* Pousse le footer vers le bas si le contenu est plus court que la page */
+    font-size: 14px; /* Taille de texte plus petite pour le footer */
+}

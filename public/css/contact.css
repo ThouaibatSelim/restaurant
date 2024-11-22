@@ -1,0 +1,125 @@
+/* body */
+body {
+    font-family: Oleo Script;
+    background-color: #f0e3f2;
+    margin: 0;
+    padding: 20px;
+    color: #0d091f;
+}
+
+/* div container */
+.container {
+     max-width: 600px;
+    margin: 0 auto;
+    background-color: #e3cbe6;
+    padding: 20px;
+    padding-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* h1 & h2 */
+h1, h2 {
+    text-align: center;
+}
+
+/* lien email */
+a {
+    color:#0d091f;
+    text-decoration: none;
+}
+
+/* formulaire */
+form {
+    max-width: 600px; /* Limite la largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Évite les dépassements */
+    font-family: Oleo Script;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* bouton */
+button {
+    background-color: #8072e9;
+    font-family: 'Oleo Script', cursive;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    display: block; /* Assure que le bouton prend toute la largeur disponible */
+    margin-left: auto; /* Centre horizontalement */
+    margin-right: auto; /* Centre horizontalement */
+}
+
+button:hover {
+    background-color: #a16ca1;
+}
+
+/* div hon (email) */
+.hon{
+    font-size: x-large;
+    text-align:center;
+}
+
+/* adresse */
+.ad {
+    font-size: x-large;
+}
+
+/* horaires */
+table {
+    font-size: medium; /* Réduit la taille de la police */
+    border: 1px ; /* Bordure générale pour la table */
+    border-radius: 35px; /* Bordures arrondies */
+    border-top-left-radius: 20px;
+    background-color: rgb(234, 242, 248);
+    border-collapse: collapse; /* Fusionne les bordures pour un rendu propre */
+    width: 60%; /* Limite la largeur du tableau */
+    margin: 20px auto; /* Centre le tableau horizontalement */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+th {
+    border-bottom: 2px solid black; /* Ligne horizontale sous l'en-tête */
+    padding: 10px;
+    text-align: center; /* Centrer le texte dans l'en-tête */
+}
+
+td {
+    padding: 10px;
+    border-left: 1px solid black; /* Ligne verticale entre les colonnes */
+}
+
+td:first-child {
+    border-left: none; /* Supprime la bordure à gauche de la première colonne */
+}
+
+
+/* footer */
+footer {
+    background-color: #70185d;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    color: #FFD7E0;
+}
