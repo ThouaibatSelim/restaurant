@@ -3,92 +3,38 @@
     font-family: Oleo Script;
     margin: 0;
     padding: 0;
-    background-color: #bfe8f3;
+    background-color: #e3cbe6;
     color: #1E3A4F;
 }
 
-/* h1 */
-h1{
-    text-align: start;
-}
-
-/* header */
-header {
-    background-color:#efd9eb;
-    color: #FFFFFF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Reste en haut lors du défilement */
-top: 0;
-} 
-
 /* class container */
-.container {
+/* .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-/* Logo */
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #FFFFFF;
-}
-
-/* barre nav */
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 15px; /* Réduction de l'espacement entre les éléments */
-    align-items: center; /* Assure un alignement vertical des éléments */
- }
-
-.navbar ul li {
-    display: inline;
-    font-size: 16px; /* Réduction de la taille de la police */
-}   
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: bold;
- }
-
-.navbar ul li a:hover {
-    background-color: #efa9d8; 
-    color: #1E3A4F; 
-}
-
+/* h2 */
 h2 {
     font-size: 30px;
     text-align: center;
 }
 
 /* image */
-
 main {
     display: flex;
     justify-content: center; /* Centre horizontalement */
     align-items: center;    /* Centre verticalement */
-    height: 70vh;          /* Prend toute la hauteur de la page */
+    /* height: 70vh;          Prend toute la hauteur de la page */
 }
 
 img {
     max-width: 100%;
     height: auto;
 }
-
-/* img {
-
-    margin: 0;
-    object-fit: none;
-  } */
 
 /* section about */
 section {
@@ -100,14 +46,3 @@ section {
 .pres {
     font-size: 20px;
 }
-
-/* footer */
-footer {
-    background-color: #1e1d1e;
-    text-align: center;
-    padding: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px ;
-    color: #FFD7E0;
-    font-size: medium;
-    }

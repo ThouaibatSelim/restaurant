@@ -1,0 +1,63 @@
+/* h1 */
+h1 {
+    text-align: start;
+    flex-shrink: 0;
+    margin: 0; /* Supprime les marges par défaut */
+    font-size: 2em; /* Ajustez la taille du titre si nécessaire */
+}
+
+/* header */
+header {
+    background-color: #a0d6e7;
+    color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Reste en haut lors du défilement */
+    width: 98%; /* Occupe toute la largeur */
+    padding: 20px 30px; /* Espacement autour du contenu */
+    justify-content: space-between; 
+    align-items: center; /* Centre verticalement les éléments */
+    display: flex;
+}
+
+/* Logo (h1) */
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+/* barre nav */
+.navbar {
+    display: flex; /* La barre de navigation utilise flexbox */
+    justify-content: flex-right; /* Aligne les éléments à droite */
+    width: auto; /* La largeur s'ajuste en fonction du contenu */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    /* padding: 0; */
+    display: flex;
+     /* Disposition horizontale des éléments de la barre de navigation */
+    gap: 15px; 
+    /* Espacement entre les éléments */
+}
+
+.navbar ul li {
+    display: inline;
+    font-size: 16px; /* Taille de la police des éléments du menu */
+    text-align: end;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 10px 15px; /* Espacement autour des liens */
+}
+
+.navbar ul li a:hover {
+    background-color: #ecc6e6;
+    color: #1E3A4F;
+}

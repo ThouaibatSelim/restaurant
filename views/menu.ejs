@@ -20,63 +20,69 @@
 
 </head>
 
+
 <body>
-<!-- Header -->
-    <header>
-        <h1>Menu - HoneyTea</h1>
-    </header>
+    <!-- Header -->
+    <%- include('partials/navbarre') %>
+
+        <h2 class="menu">Menu - HoneyTea</h2>
+
     
-    <h2>Thés</h2>
+    <h3>Thés:</h3>
 
-    <ul>
-         <% thes.nom.forEach (t => { %>
+    <ol>
+         <% resultat.forEach (t => { %>
 
-            <li> <%= t %> <em> <%= thes.prix %></em></li>
+            <li> <%= t.nom %> <em> <%= t.prix %></em></li>
     <% }) %>
         
-    </ul>
+    </ol>
 <br>
-    <h2>Pâtisseries</h2>
+    <h3>Pâtisseries:</h3>
 
-    <ul>
+    <ol>
          <% patisseries.nom.forEach (p => { %>
 
             <li> <%= p %> <em> <%= patisseries.prix %></em></li>
     <% }) %>
         
-    </ul>
+    </ol>
 
-    <h2>Appéritifs</h2>
+    <h3>Appéritifs:</h3>
 
-    <ul>
+    <ol>
          <% apperitif.nom.forEach (a => { %>
 
             <li> <%= a %> <em> <%= apperitif.prix %></em></li>
     <% }) %>
         
-    </ul>
+    </ol>
 
-    <h2>Boissons (faites maison)</h2>
+    <h3>Boissons (faites maison):</h3>
 
-    <ul>
+    <ol>
          <% boissons.nom.forEach (b => { %>
 
             <li> <%= b %> <em> <%= boissons.prix %></em></li>
     <% }) %>
         
-    </ul>
+    </ol>
 
     <br>
     <div class="bouton">
-        <button>Commander</button>
+        <button><a href="commande" target="">Commander</a></button>
     </div>
+
     
     <!-- Bon appétit -->
     <p class="tea"> Bon AppéTea!</p>
     <br>
-    <footer>
+
+    <%- include('partials/footer') %>
+
+    <!-- <footer>
         <p> 2024 Salon de Thé "HoneyTea". Tous droits réservés.</p>
     </footer>
-    
+     -->
 </body>
 </html>

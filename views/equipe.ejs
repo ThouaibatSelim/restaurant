@@ -11,34 +11,27 @@
 </head>
 <body>
 
+    <%- include('partials/navbarre') %>
+
     <!-- H1 -->
-    <h1>Découvrez l'équipe HoneyTea!</h1>
+    <h2 class="dec">Découvrez l'équipe HoneyTea!</h2>
     
     <!-- présentation de l'équipe -->
      <h3>Nous sommes composés de:</h3>
-     <ul>
+     <ol class="equipe">
         <% equipe.forEach (e => { %>
 
            <li> <em><%= e.nom %></em> - <em> <%= e.role %></em></li>
    <% }) %>
        
-   </ul>
-    <!-- <ul><br><br>
-        <li>Thouaïbat Sélim - Créatrice et Gérante de HoneyTea</li>
-        <br>
-        <li>Kamal Abdou - Cuisinier/Pâtissier</li>
-        <br>
-        <li>Fatima Houmadi - Serveuse</li>
-        <br>
-        <li>Ali Hachim - Livreur</li>
-        <br>
-        <li>Bacar Daoud - Comptable</li> -->
-    </ul>
-
+     </ol>
     <!-- footer -->
-    <footer>
+    <!-- <footer>
         <p> 2024 Salon de Thé "HoneyTea". Tous droits réservés.</p>
-    </footer>
+    </footer> -->
+
+    <%- include('partials/footer') %>
+
 
 </body>
 </html>

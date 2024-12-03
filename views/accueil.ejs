@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accueil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
@@ -11,32 +11,14 @@
 </head>
 
 <body>
-    
-    <!-- Header -->
-       <header class="header">
-        <div class="container">
-            <h1 class="logo">HoneyTea</h1>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="equipe.html">Notre Équipe</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <%- include('partials/navbarre') %>
 
 <h2>Bienvenue</h2>
 
-    <!-- <h4>
-        <% utilisateur.prenom.forEach(n => { %>
-            <%= utilisateur.bonj + " " + n %>
-        <% }) %>
-        </h4> -->
+
     <main>
         <div class="main">
-            <img src="images/IMG_8077.jpg" width="450px" id="objectposition">
+            <img src="images/IMG_8077.jpg" width="350px">
 </div>
     </main>
        <!-- Section About -->
@@ -49,13 +31,7 @@
             Découvrez notre menu!</p>
         
         </section>
-   
 
-       <!-- Footer -->
-       <footer class="footer">
-           <p>© 2024 HoneyTea. Tous droits réservés.</p>
-           
-       </footer>
-
+        <%- include('partials/footer') %>
     </body>
    </html>

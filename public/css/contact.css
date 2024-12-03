@@ -3,23 +3,27 @@ body {
     font-family: Oleo Script;
     background-color: #f0e3f2;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     color: #0d091f;
 }
 
 /* div container */
 .container {
-     max-width: 600px;
-    margin: 0 auto;
-    background-color: #e3cbe6;
-    padding: 20px;
-    padding-right: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+   margin: 0 auto;
+   background-color: #e3cbe6;
+   padding: 20px;
+   padding-right: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* h1 & h2 */
-h1, h2 {
+/* h2 */
+h2 {
+    text-align: center;
+}
+
+h3 { 
     text-align: center;
 }
 
@@ -92,7 +96,7 @@ table {
     border: 1px ; /* Bordure générale pour la table */
     border-radius: 35px; /* Bordures arrondies */
     border-top-left-radius: 20px;
-    background-color: rgb(234, 242, 248);
+    background-color: rgb(242, 244, 245);
     border-collapse: collapse; /* Fusionne les bordures pour un rendu propre */
     width: 60%; /* Limite la largeur du tableau */
     margin: 20px auto; /* Centre le tableau horizontalement */
@@ -112,14 +116,4 @@ td {
 
 td:first-child {
     border-left: none; /* Supprime la bordure à gauche de la première colonne */
-}
-
-
-/* footer */
-footer {
-    background-color: #70185d;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    color: #FFD7E0;
 }
