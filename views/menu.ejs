@@ -27,24 +27,31 @@
 
         <h2 class="menu">Menu - HoneyTea</h2>
 
-    
+    <!-- Menu -->
+
     <h3>Thés:</h3>
 
     <ol>
          <% resultat.forEach (t => { %>
 
             <li> <%= t.nom %> <em> <%= t.prix %></em></li>
+            <input type="button" value="Supprimer" class="supp" onclick="">
+            <input type="button" value="Modifier" class="modif" onclick="remplirDonnees('<%= t.id %>', '<%= t.nom %>', '<%= t.prix %>')">
     <% }) %>
         
     </ol>
 <br>
+
+<!--  -->
     <h3>Pâtisseries:</h3>
 
     <ol>
          <% patisseries.nom.forEach (p => { %>
 
             <li> <%= p %> <em> <%= patisseries.prix %></em></li>
-    <% }) %>
+            <input type="button" value="Supprimer" class="supp" onclick="">
+            <input type="button" value="Modifier" class="modif" onclick="">
+         <% }) %>
         
     </ol>
 
@@ -54,6 +61,8 @@
          <% apperitif.nom.forEach (a => { %>
 
             <li> <%= a %> <em> <%= apperitif.prix %></em></li>
+            <input type="button" value="Supprimer" class="supp" onclick="">
+            <input type="button" value="Modifier" class="modif"  onclick="">
     <% }) %>
         
     </ol>
@@ -64,25 +73,45 @@
          <% boissons.nom.forEach (b => { %>
 
             <li> <%= b %> <em> <%= boissons.prix %></em></li>
+            <input type="button" value="Supprimer" class="supp" onclick="">
+            <input type="button" value="Modifier" class="modif" onclick="remplirDonnees('<%= b.id %>', '<%= b.nom %>', '<%= b.prix %>')">
     <% }) %>
         
     </ol>
 
     <br>
     <div class="bouton">
-        <button><a href="commande" target="">Commander</a></button>
+        <button class="comm"><a href="commande" target="_blank">Commander</a></button>
     </div>
 
-    
+<br> <br>
+    <!-- Formulaire -->
+    <h3>Créez un nouveau plat</h3>
+    <form action="/new" method="post" id="new">
+        <input type="hidden" name="id" id="id">
+        <label for="">Nom:</label>
+        <input type="text" id="nomthe" name="nom"  placeholder="Nom">
+    <br><br>
+    <label for="">Prix:</label>
+    <input type="text" id="prixthe" name="prix"   placeholder="Prix">
+    <br><br>    
+
+        <button type="submit" class="Enregistrer">Enregistrer</button>
+
+
     <!-- Bon appétit -->
     <p class="tea"> Bon AppéTea!</p>
     <br>
 
     <%- include('partials/footer') %>
-
-    <!-- <footer>
-        <p> 2024 Salon de Thé "HoneyTea". Tous droits réservés.</p>
-    </footer>
-     -->
 </body>
+
+<script> 
+    function remplirDonnees(id, nom, prix){
+        document.querySelector("#id").value = id;
+        document.querySelector("#nomthe").value = nom;
+        document.querySelector("#prixthe").value = prix;
+    }
+</script>
+
 </html>

@@ -38,52 +38,15 @@ app.use(express.static("public"));
 
 // ACCUEIL
 app.get("/accueil", (req, res) => {
-
-    req.getConnection((erreur, connection) => {
-        if(erreur) {
-            console.log(erreur);
-        } else {
-            connection.query("SELECT * FROM thes", [], (err, resultat) => {
-                if (err) {
-                    console.log(err);
-                } else {
-                console.log("resultat : ", resultat);
-                res.render("accueil", {resultat});
-            }
-
-            });
-        }
-    
-    });
-});
-    //heure
-//     const date = new Date();
-//     let heure = date.toLocaleTimeString();
-//     let salut = "Bonjour";
-
-//     if (date.toLocaleTimeString < 18){
-//         salut = "Bonsoir";
-    
-//     }
-
-//     utilisateur = {
-//         prenom: ["Thouaïbat", "Ali", "Madi"],
-//         nom: "Sélim",
-//         bonj: salut
-//     };
-//     res.render("accueil");
-// });
-
-//     fs.readFile("accueil.html", (err, data) => {
-//         if (err) {
-//             res.status(404).send("Le fichier est introuvable.");
-//         } else {
-//             res.status(200).contentType("text/html").send(data);
-//         }
-//     });
+//renvoyer la page accueil
+    res.render("accueil");
+}
+);
 
 // MENU
 app.get("/menu", (req, res) => {
+
+//afficher les noms et prix depuis la base de données
 
     //thés
     req.getConnection((erreur, connection) => {
@@ -104,7 +67,6 @@ app.get("/menu", (req, res) => {
 
 });
 
-
 //patisseries
 // req.getConnection((error, connection) => {
 //     if(error) {
@@ -117,12 +79,12 @@ app.get("/menu", (req, res) => {
 //             console.log("resultat : ", result);
 //             res.render("menu", {result});
 //         }
-
 //     }
 // )}
 
 // });
 
+// tableaux plats
     thes = {
         nom: ["Thé Ngizi (Miel)", "Thé Tsingiziwu (Gingembre)", 
             "Thé Masandzé (Citronelle)", "Thé Nana (Menthe)", 
@@ -130,8 +92,6 @@ app.get("/menu", (req, res) => {
         prix: 2
 
     };
-
-
 
     patisseries = {
         nom: ["Tartes au Citron", "Tartes à l'Ananas", "Fondants au Chocolat", 
@@ -164,6 +124,7 @@ app.get("/menu", (req, res) => {
 // EQUIPE
 app.get("/equipe", (req, res) => {
 
+    //tableau prénom-nom, poste de l'équipe
     equipe = [ 
         {
             nom: "Thouaïbat Sélim", role: "Créatrice et Gérante",
@@ -204,10 +165,51 @@ app.get("/contact", (req, res) => {
     // });
 });
 
-//COMMANDE
-app.post("/commande", (req, res) => {
-    console.log("Corps requête", req.body.nom)
-    console.log("Corps requête", req.body.prix)
+//NEW
+app.post("/new", (req, res) => {
+    //afficher le corps de ma requête
+    console.log("Corps requête BODY", req.body);
+    console.log("Corps requête NOM", req.body.nom);
+    console.log("Corps requête PRIX", req.body.prix);
+   
+    let nomThe = req.body.nom;
+    let prixThe = req.body.prix;
+    let idThe = req.body.id;
+    let requeteSQL;
+
+    //si id vide --> id = null
+    if(req.body.id === "") { 
+        idThe = null;
+        requeteSQL = "INSERT INTO thes (id, nom, prix) VALUES (?,?,?)";
+    } else{
+            idThe = req.body.id;
+        requeteSQL = "UPDATE thes SET nom = ?, prix = ? WHERE id = ?";
+        }
+
+        //Ordre de données
+        let ordreDonnees;
+        if (idThe === null) {
+        ordreDonnees = [null, nomThe, prixThe];
+        } else {
+        ordreDonnees = [nomThe, prixThe, idThe];
+        }
+
+    //enregistrer dans la base de données
+    req.getConnection((erreur, connection) => {
+        if(erreur) {
+            console.log(erreur);
+        } else {
+            connection.query(requeteSQL, ordreDonnees, (err, resultat) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                console.log("Insertion Réussie!");
+                res.status(300).redirect("menu");
+            }
+
+            }
+)}  
+    })
 });
 
 module.exports = app;

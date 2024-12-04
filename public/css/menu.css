@@ -60,13 +60,19 @@ button {
     font-family: Oleo Script;
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
+
     cursor: pointer;
     border-radius: 4px;
     font-size: 20px;
     display: inline-block;
 }
+
+.comm {
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+
 button:hover {
     background-color: #a16ca1;
 }
@@ -81,6 +87,22 @@ button a {
     text-decoration: none;
     color: white;
 }
+
+button .enregistrer {
+    background-color: #8072e9;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 5px;
+}
+
+input{
+    font-family: Oleo Script;
+}
+
+
 /* bon appétit */
 .tea {
     text-align: center;

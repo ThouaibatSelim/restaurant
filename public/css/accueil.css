@@ -7,15 +7,6 @@
     color: #1E3A4F;
 }
 
-/* class container */
-/* .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
 
 /* h2 */
 h2 {
@@ -40,6 +31,28 @@ img {
 section {
     padding: 40px 20px;
     text-align: center;
+}
+
+/* bouton */
+button {
+    background-color: #8072e9;
+    font-family: Oleo Script;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    /* margin-top: 20px;  */
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 10px;
+    display: inline-block;
+}
+button:hover {
+    background-color: #a16ca1;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
 }
 
 /* Paragraphe présentation */
