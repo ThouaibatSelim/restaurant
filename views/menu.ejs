@@ -23,7 +23,6 @@
 
 <body>
     <!-- Header -->
-    <%- include('partials/navbarre') %>
 
         <h2 class="menu">Menu - HoneyTea</h2>
 
@@ -35,7 +34,7 @@
          <% resultat.forEach (t => { %>
 
             <li> <%= t.nom %> <em> <%= t.prix %></em></li>
-            <input type="button" value="Supprimer" class="supp" onclick="">
+            <input type="button" value="Supprimer" class="supp" onclick="supprimerDonnees('<%= t.id %>') ">
             <input type="button" value="Modifier" class="modif" onclick="remplirDonnees('<%= t.id %>', '<%= t.nom %>', '<%= t.prix %>')">
     <% }) %>
         
@@ -87,7 +86,7 @@
 <br> <br>
     <!-- Formulaire -->
     <h3>Créez un nouveau plat</h3>
-    <form action="/new" method="post" id="new">
+    <form action="/new" method="post" id="modif">
         <input type="hidden" name="id" id="id">
         <label for="">Nom:</label>
         <input type="text" id="nomthe" name="nom"  placeholder="Nom">
@@ -103,7 +102,6 @@
     <p class="tea"> Bon AppéTea!</p>
     <br>
 
-    <%- include('partials/footer') %>
 </body>
 
 <script> 
@@ -111,6 +109,18 @@
         document.querySelector("#id").value = id;
         document.querySelector("#nomthe").value = nom;
         document.querySelector("#prixthe").value = prix;
+    }
+
+    function supprimerDonnees(id, nom, prix){
+        let routeComplete = "new/" + id;
+        
+        fetch(
+            routeComplete, {method : "DELETE"}
+        ).then(
+            (response) => response.json()
+        ).then(
+            (donnee) => window.location.href = donnee.routeRacine
+        )
     }
 </script>
 
