@@ -76,7 +76,7 @@ app.get("/menu", (req, res) => {
 //             if (err) {
 //                 console.log(err);
 //             } else {
-//             console.log("resultat : ", result);
+//             console.log("result : ", result);
 //             res.render("menu", {result});
 //         }
 //     }
@@ -165,7 +165,7 @@ app.get("/contact", (req, res) => {
     // });
 });
 
-//NEW
+//MODIFIER
 app.post("/new", (req, res) => {
     //afficher le corps de ma requête
     console.log("Corps requête BODY", req.body);
@@ -186,7 +186,7 @@ app.post("/new", (req, res) => {
         requeteSQL = "UPDATE thes SET nom = ?, prix = ? WHERE id = ?";
         }
 
-        //Ordre de données
+        //Ordre des données
         let ordreDonnees;
         if (idThe === null) {
         ordreDonnees = [null, nomThe, prixThe];
@@ -205,6 +205,29 @@ app.post("/new", (req, res) => {
                 } else {
                 console.log("Insertion Réussie!");
                 res.status(300).redirect("menu");
+            }
+
+            }
+)}  
+    })
+});
+
+app.delete ("/new/:id", (req, res) => { //méthode delete
+
+    let idThe = req.params.id; //récupère l'id à partir de l'objet params
+
+    //supprimer de la base de données
+    req.getConnection((erreur, connection) => {
+        if(erreur) { //si erreur
+            console.log(erreur);
+        } else { // sinon supprimer
+            connection.query("DELETE FROM thes WHERE id = ?", 
+                [idThe], (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else { //afficher résultat sur la page
+                console.log("Suppression Réussie!");
+                res.status(200).json({routeRacine: "/menu"});
             }
 
             }
